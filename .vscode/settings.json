@@ -1,0 +1,22 @@
+{
+    "editor.dropIntoEditor.preferences": [],
+    "editor.inlineSuggest.enabled": false,
+    "github.copilot.inlineSuggest.enable": false,
+    "github.copilot.enable": {
+        "*": false
+    },
+    "cloudcode.duetAI.inlineSuggestions.enabled": false,
+    "gemini.inlineSuggestions.enabled": false,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.wordBasedSuggestions": "matchingDocuments",
+    "editor.acceptSuggestionOnEnter": "on",
+    "antigravity.inlineSuggest.enabled": false,
+    "antigravity.codeCompletions.enabled": false,
+    "antigravity.enableGhostText": false,
+    "antigravity.ai.inlineSuggestions.enabled": false
+}

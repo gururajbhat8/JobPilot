@@ -1,0 +1,9 @@
+# Python environment
+jobpilot/
+__pycache__/
+
+# Environment variables (CRITICAL: Never upload API keys!)
+.env
+
+# ChromaDB local storage
+chroma_db/
