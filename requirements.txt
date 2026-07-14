@@ -1,0 +1,27 @@
+# Web Framework & API
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+
+# AI & Agents
+langgraph
+langchain-core
+groq
+
+# Vector DB & Embeddings
+sentence-transformers
+chromadb
+
+# Data Ingestion
+apify-client
+
+# Database
+SQLAlchemy
+psycopg[binary]
+
+# Dashboard
+streamlit
+
+# Utilities
+python-dotenv
