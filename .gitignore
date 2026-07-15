@@ -7,3 +7,4 @@ __pycache__/
 
 # ChromaDB local storage
 chroma_db/
+
