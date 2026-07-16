@@ -13,6 +13,7 @@ class Job(Base):
     source = Column(String) # e.g., 'linkedin', 'naukri'
     title = Column(String)
     company = Column(String)
+    url = Column(String)
     raw_text = Column(String) # The massive wall of text from the scraper
     scraped_at = Column(DateTime, default=datetime.datetime.utcnow)
 
