@@ -23,6 +23,7 @@ def run_scraper_and_save(keywords: str, location: str, max_items: int = 2):
                 title=item.get("title", "Unknown Title"),
                 company=item.get("companyName", "Unknown Company"),
                 # This is the massive wall of text the LLM will parse later!
+                url=item.get("link", ""),
                 raw_text=item.get("descriptionText", "")
             )
 
@@ -41,4 +42,5 @@ def run_scraper_and_save(keywords: str, location: str, max_items: int = 2):
 
     finally:
         db.close() 
-        
+
+
