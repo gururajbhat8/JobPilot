@@ -25,3 +25,7 @@ streamlit
 
 # Utilities
 python-dotenv
+
+
+pdfplumber
+python-multipart
