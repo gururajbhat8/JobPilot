@@ -1,17 +1,42 @@
+version: '3.8'
 
 services:
-  postgres:
-    image: postgres:15-alpine
-    container_name: jobpilot_db
+  db:
+    image: postgres:15
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: password123
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
       POSTGRES_DB: jobpilot
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    restart: always
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      # Tell FastAPI exactly how to connect to the 'db' container
+      DATABASE_URL: postgresql://user:password@db:5432/jobpilot
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "8501:8501"
+    environment:
+      # Tell Streamlit to route traffic to the 'backend' container
+      API_URL: http://backend:8000/match
+    depends_on:
+      - backend
 
 volumes:
   postgres_data:

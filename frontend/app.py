@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+import os
 
 st.set_page_config(page_title="JobPilot AI", page_icon="🚀", layout="wide")
 
@@ -14,7 +15,7 @@ if uploaded_file is not None:
         with st.spinner("Agents are reading your resume and searching the Vector Database..."):
             
             # The URL of your local FastAPI server
-            url = "http://127.0.0.1:8000/match"
+            url = os.getenv("API_URL", "http://127.0.0.1:8000/match")
             
             # Package the file exactly how FastAPI expects it
             files = {"file": (uploaded_file.name, uploaded_file, "application/pdf")}
